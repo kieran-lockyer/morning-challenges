@@ -1,5 +1,4 @@
-# morning-challenges-term1
-CA Term 1 Ruby Morning Challenges - Student Starter Repo
+# CA Term 1 Ruby Morning Challenges - Student Starter Repo
 
 1. Clone this repo and clone it to their laptop. This repo will be used to store your solutions to the morning challenges.
 
