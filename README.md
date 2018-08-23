@@ -1,7 +1,7 @@
 # morning-challenges-term1
 CA Term 1 Ruby Morning Challenges - Student Starter Repo
 
-Students should create a new repo on Github called morning-challenges and clone it to their laptop. This repo will be used to fetch, complete and push their solutions to the morning challenges.
+Students should create a new repo on Github called morning-challenges-term1 and clone it to their laptop. This repo will be used to fetch, complete and push their solutions to the morning challenges.
 
 To fetch the daily challenge, students should add this base repo as a new remote:
 
