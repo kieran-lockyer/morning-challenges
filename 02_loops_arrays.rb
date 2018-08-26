@@ -3,15 +3,15 @@
 # - print this complete sentence
 
 # you are working at a bar where you have a current backlog of drinks to make:
-#  3 party parrot cocktails
-# 2 party parrot waters
+# 3 cocktails
+# 2 waters
 # and
-# 6 party parrot beers
+# 6 beers
 
 # write a program that asks the customer for their order.
-# if they order a party parrot cocktail, add one to the number of party parrot cocktails you need to make,
-# if they order a party parrot water, add one to the number of party parrot waters you need to make,
-# if they order a party parrot beer, add one to the number of party parrot beers you need to pour
+# if they order a cocktail, add one to the number of cocktails you need to make,
+# if they order a water, add one to the number of waters you need to make,
+# if they order a beer, add one to the number of beers you need to pour
 
 # print the final drinks order so you know what to make
 
