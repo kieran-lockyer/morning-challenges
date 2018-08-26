@@ -6,7 +6,7 @@
 2. Make sure you cd into the cloned repo folder, then add the challenges base repo as a new remote:
 
 ```sh
-git remote add morning https://github.com/CoderAcademy-BRI/morning-challenges-term1.git
+git remote add morning git@github.com:CoderAcademy-BRI/morning-challenges-term1.git
 ```
 
 3. Each morning, get the new challenge with:
