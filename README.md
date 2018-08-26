@@ -6,7 +6,7 @@ Students should create a new repo on Github called morning-challenges-term1 and 
 To fetch the daily challenge, students should add this base repo as a new remote:
 
 ```sh
-git remote add morning https://github.com/CoderAcademy-BRI/morning-challenges-term1.git
+git remote add morning git@github.com:CoderAcademy-BRI/morning-challenges-term1.git
 ```
 
 Then, each morning, students can get the new challenge with:
