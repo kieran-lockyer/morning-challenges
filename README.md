@@ -12,5 +12,7 @@ git remote add morning git@github.com:CoderAcademy-BRI/morning-challenges-term1.
 Then, each morning, students can get the new challenge with:
 
 ```sh
-git pull morning master
+git pull --no-edit morning <branch> && git push origin master
 ```
+
+Substitute <branch> with the branch name of the challenge for the current day. This will be provided to you each morning on Slack #general.
