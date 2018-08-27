@@ -1,7 +1,8 @@
 echo "Getting morning challenge ..."
 git add .
 git stash
-git pull --no-edit morning master
+git fetch https://github.com/CoderAcademy-BRI/morning-challenges-term1.git
+git checkout FETCH_HEAD -- $1*
 git stash pop
 echo "Done!"
 ls
