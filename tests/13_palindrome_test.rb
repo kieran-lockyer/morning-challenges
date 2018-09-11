@@ -1,5 +1,5 @@
 require 'test/unit'
-require_relative '../06_palindrome'
+require_relative '../13_palindrome'
 
 class LargestNumberTest < Test::Unit::TestCase
   def test_palindrome
