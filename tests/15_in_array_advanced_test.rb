@@ -1,5 +1,5 @@
 require 'test/unit'
-require_relative '../08_in_array_advanced'
+require_relative '../15_in_array_advanced'
 
 class InArrayTest < Test::Unit::TestCase
   def test_array_advanced_strict
