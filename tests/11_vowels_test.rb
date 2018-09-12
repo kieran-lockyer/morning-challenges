@@ -1,5 +1,5 @@
 require 'test/unit'
-require_relative '../04_vowels'
+require_relative '../11_vowels'
 
 class LargestNumberTest < Test::Unit::TestCase
   def test_vowels
