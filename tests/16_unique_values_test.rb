@@ -1,5 +1,5 @@
 require 'test/unit'
-require_relative '../16_unique'
+require_relative '../16_unique_values'
 
 class UniqueTest < Test::Unit::TestCase
   def test_unique
