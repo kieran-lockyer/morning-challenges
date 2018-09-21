@@ -22,5 +22,4 @@ def unique (mylist)
   hash = {}
   mylist.each { |x| hash[x] = true }
   hash.keys
-  # Your code here
 end

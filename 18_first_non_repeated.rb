@@ -31,6 +31,6 @@
 #
 
 def firstNonRepeat (string)
-  # Your code here
-  # Whiteboard first!
+  string.chars.each { |x| return x if string.count(x) == 1 }
+  false
 end
