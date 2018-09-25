@@ -23,5 +23,5 @@
 #
 
 def ExesAndOhs(string)
-  # yo' co' here
+  string.upcase!.count('X') == string.count('O')
 end
