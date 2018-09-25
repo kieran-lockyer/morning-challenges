@@ -12,6 +12,9 @@
 # ruby tests/16_page_title_test.rb
 #
 
+require 'open-uri'
+
 def pageTitle(url)
-  # your code here
+  open(url).read.scan(/<title>(.*?)<\/title>/)[0][0]
 end
+
