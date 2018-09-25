@@ -11,7 +11,12 @@
 class Pangram
 
     def self.is_pangram?(str)
-        # put code here
+        for letter in ('a'..'z')
+            if !str.downcase.include?(letter)
+                return false
+            end
+        end
+        return true
     end
 
 end
