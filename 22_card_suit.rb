@@ -9,7 +9,5 @@
 
 def define_suit(card)
   # Good luck
-  suits = { C: 'clubs', S: 'spades', D: 'diamonds', H: 'hearts' }
-  return suits[card.chars.last.to_sym]
 end
 
