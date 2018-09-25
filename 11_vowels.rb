@@ -14,6 +14,7 @@
 # ruby tests/04_vowels_test.rb
 #
 
+<<<<<<< HEAD
 # def count_vowels (string)
 #   result = []
 #   string.each_char do |letter|
@@ -48,3 +49,8 @@ class LargestNumberTest < Test::Unit::TestCase
     assert_equal(["A","e","E"], vowels("cAse tEst"))
   end
 end
+=======
+def vowels (string)
+  string.scan(/[aeiou]/i)
+end
+>>>>>>> b028df5d644e116007105a13b9522c8e1282f993

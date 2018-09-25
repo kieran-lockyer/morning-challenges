@@ -19,5 +19,9 @@
 #
 
 def includedOnce (haystack, needle)
+<<<<<<< HEAD
   return haystack.count(needle) == 1
+=======
+  haystack.count(needle) == 1
+>>>>>>> b028df5d644e116007105a13b9522c8e1282f993
 end

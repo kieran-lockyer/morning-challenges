@@ -18,6 +18,7 @@
 # ruby tests/09_unique_test.rb
 #
 
+<<<<<<< HEAD
 # def unique (mylist)
 #   result = []
 #   for item in mylist
@@ -54,3 +55,10 @@
 
 puts unique([1,2,3,3])
 puts unique(["tom", "tom", "tom"])
+=======
+def unique (mylist)
+  hash = {}
+  mylist.each { |x| hash[x] = true }
+  hash.keys
+end
+>>>>>>> b028df5d644e116007105a13b9522c8e1282f993

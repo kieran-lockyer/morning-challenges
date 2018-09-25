@@ -30,6 +30,7 @@
 # ruby tests/13_first_non_repeated_test.rb
 #
 
+<<<<<<< HEAD
 # def firstNonRepeat (string)
 #   puts "non deleter"
 #   steps = 0
@@ -70,3 +71,9 @@ puts firstNonRepeat('aaaabbbcccdeeefgh')
 puts firstNonRepeat('wwwhhhggge')
 puts firstNonRepeat('awwwhhhggge')
 puts firstNonRepeat('wwwhhhggg')
+=======
+def firstNonRepeat (string)
+  string.chars.each { |x| return x if string.count(x) == 1 }
+  false
+end
+>>>>>>> b028df5d644e116007105a13b9522c8e1282f993
