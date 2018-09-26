@@ -24,5 +24,29 @@
 # # And so on...
 
 class HighScoreTable
-  # your code here
+  attr_accessor :scores
+
+  def initialize(no_of_scores)
+    @scores = []
+    @limit = no_of_scores
+  end
+
+  def update(score)
+    if @scores.length < @limit
+      @scores.push(score)
+    else
+      @scores.delete(scores.min)
+      @scores.push(score)
+    end
+  end
+
+  def scores
+    puts @scores.sort.reverse.inspect
+  end
+  
+  def reset
+    @scores.length.times do
+      @scores.pop
+    end
+  end
 end
