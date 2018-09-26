@@ -21,3 +21,15 @@ def define_suit(card)
   end
 end
 
+
+case = suit
+when "C"
+    return 'clubs'
+  when "D"
+    return 'diamonds'
+  when "H"
+    return 'hearts'
+  when "S"
+    return 'spades'
+  end
+
