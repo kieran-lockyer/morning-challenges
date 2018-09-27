@@ -5,7 +5,7 @@ class Card
     
     def face_card?
         # Is the card a face card (above 10)?
-    end
+    end 
     
     def to_s
         # Return human readable card

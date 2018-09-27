@@ -7,7 +7,7 @@ class CardGame < Test::Unit::TestCase
         @ten_of_clubs = Card.new(:clubs, 10)
         @ace_of_diamonds = Card.new(:diamonds, 1)
     end
-    def test_get_suit
+    def test_get_suit 
         assert_equal(:spades, @queen_of_spades.suit)
         assert_equal(:clubs, @ten_of_clubs.suit)
     end
