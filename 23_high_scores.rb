@@ -33,15 +33,15 @@ class HighScoreTable
 
   def update(score)
     if @scores.length < @limit
-      @scores.push(score)
+      @scores = @scores.push(score).sort.reverse
     else
-      @scores.delete(scores.min)
-      @scores.push(score)
+      @scores = @scores.push(score).sort.reverse
+      @scores.pop
     end
   end
 
   def scores
-    puts @scores.sort.reverse.inspect
+    @scores
   end
   
   def reset
@@ -50,3 +50,15 @@ class HighScoreTable
     end
   end
 end
+
+highScoreTable = HighScoreTable.new(3)
+puts highScoreTable.scores == [] # evaluates to True
+highScoreTable.update(10)
+puts highScoreTable.scores == [10]
+highScoreTable.update(8)
+highScoreTable.update(12)
+highScoreTable.update(5)
+highScoreTable.update(10)
+puts highScoreTable.scores == [12, 10, 10]
+highScoreTable.reset()
+puts highScoreTable.scores == []
