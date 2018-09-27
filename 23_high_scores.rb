@@ -45,9 +45,7 @@ class HighScoreTable
   end
   
   def reset
-    @scores.length.times do
-      @scores.pop
-    end
+    @scores = []
   end
 end
 
@@ -62,3 +60,5 @@ highScoreTable.update(10)
 puts highScoreTable.scores == [12, 10, 10]
 highScoreTable.reset()
 puts highScoreTable.scores == []
+
+sudo apt-get install zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2 libxml2-dev libxslt-dev gawk libgdbm-dev libncurses5-dev automake libtool bison libffi-dev nodejs
