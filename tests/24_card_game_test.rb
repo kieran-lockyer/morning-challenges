@@ -6,6 +6,7 @@ class CardGame < Test::Unit::TestCase
         @queen_of_spades = Card.new(:spades, 12)
         @ten_of_clubs = Card.new(:clubs, 10)
         @ace_of_diamonds = Card.new(:diamonds, 1)
+        @ace_of_spades = Card.new(:spades, 1)
     end
     def test_get_suit 
         assert_equal(:spades, @queen_of_spades.suit)
@@ -30,6 +31,9 @@ class CardGame < Test::Unit::TestCase
         # You will need to make the Card class Comparable to make this work
         # Ref: https://docs.ruby-lang.org/en/2.5.0/Comparable.html
         assert_operator(@queen_of_spades, :>, @ten_of_clubs)
+    end
+    def test_ace_high_low
+        assert_operator(@ace_of_spades.ace_high_or_low, :>, @ace_of_diamonds)
     end
 end
 
