@@ -34,7 +34,7 @@ class DeckOfCards < Test::Unit::TestCase
     def test_shuffle
         initial_deck = @deck.cards
         @deck.shuffle
-        asset_not_equal(initial_deck, @deck.cards)
+        assert_not_equal(initial_deck, @deck.cards)
     end
 end
 
