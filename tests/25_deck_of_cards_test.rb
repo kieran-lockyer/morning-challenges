@@ -15,7 +15,7 @@ class DeckOfCards < Test::Unit::TestCase
         assert_equal(52, @deck.cards.length)
     end
     # count() method should return the actual length of the cards array
-    def test_initial_card_count 
+    def test_card_length_equals_card_count 
         assert_equal(@deck.cards.length, @deck.count)
     end
     # Should return 1 card, leaving 51 in deck
