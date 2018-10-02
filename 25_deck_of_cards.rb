@@ -21,7 +21,7 @@ class Deck
   attr_accessor :cards
   def initialize
     @cards = [] # Create a new array of cards
-    for suit in ['C', 'H', 'S', 'D']
+    for suit in [:clubs, :hearts, :spades, :diamonds]
       13.times do |rank|
         @cards.push(Card.new(suit, rank + 1))
       end
@@ -45,4 +45,3 @@ class Deck
     @cards.length # How many cards are left?
   end
 end
-
