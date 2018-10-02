@@ -32,9 +32,9 @@ class DeckOfCards < Test::Unit::TestCase
     end
     # Shuffled deck should not equal initial deck
     def test_shuffle
-        initial_deck = @deck.cards
+        new_deck = Deck.new
         @deck.shuffle
-        assert_not_equal(initial_deck, @deck.cards)
+        assert_not_equal(new_deck.cards, @deck.cards)
     end
 end
 
