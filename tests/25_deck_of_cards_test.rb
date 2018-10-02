@@ -15,7 +15,7 @@ class DeckOfCards < Test::Unit::TestCase
         assert_equal(52, @deck.cards.length)
     end
     # count() method should return the actual length of the cards array
-    def test_initial_card_count 
+    def test_card_length_equals_card_count 
         assert_equal(@deck.cards.length, @deck.count)
     end
     # Should return 1 card, leaving 51 in deck
@@ -32,9 +32,13 @@ class DeckOfCards < Test::Unit::TestCase
     end
     # Shuffled deck should not equal initial deck
     def test_shuffle
-        initial_deck = @deck.cards
+        new_deck = Deck.new
         @deck.shuffle
+<<<<<<< HEAD
         assert_not_equal(initial_deck, @deck.cards)
+=======
+        assert_not_equal(new_deck.cards, @deck.cards)
+>>>>>>> b8bdbd771ee37d473930fd4e67e87413648f2007
     end
 end
 
