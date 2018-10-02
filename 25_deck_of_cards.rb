@@ -18,20 +18,22 @@
 require_relative '24_card_game'
 
 class Deck
+  attr_accessor :cards
   def initialize
     @cards = [] # Create a new array of cards
     suits = ['C', 'H', 'S', 'D']
     for suit in suits
       13.times do |rank|
-        @cards.push(Card.new(suit, rank + 1)
+        @cards.push(Card.new(suit, rank + 1))
       end
     end
   end
   
   def shuffle
-    @cards.shuffle! # Shuffle the remaining cards
+    @cards = @cards.shuffle! # Shuffle the remaining cards
+    self
   end
-
+  
   def draw(n=1)
     drawn_cards = [] # Draw (remove) n cards from the deck. Return those cards
     n.times do 
@@ -39,8 +41,9 @@ class Deck
     end
     return drawn_cards
   end
-
+  
   def count
     @cards.length # How many cards are left?
   end
 end
+
