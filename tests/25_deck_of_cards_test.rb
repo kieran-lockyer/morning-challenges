@@ -34,11 +34,7 @@ class DeckOfCards < Test::Unit::TestCase
     def test_shuffle
         new_deck = Deck.new
         @deck.shuffle
-<<<<<<< HEAD
-        assert_not_equal(initial_deck, @deck.cards)
-=======
         assert_not_equal(new_deck.cards, @deck.cards)
->>>>>>> b8bdbd771ee37d473930fd4e67e87413648f2007
     end
 end
 

@@ -21,8 +21,7 @@ class Deck
   attr_accessor :cards
   def initialize
     @cards = [] # Create a new array of cards
-    suits = ['C', 'H', 'S', 'D']
-    for suit in suits
+    for suit in ['C', 'H', 'S', 'D']
       13.times do |rank|
         @cards.push(Card.new(suit, rank + 1))
       end
