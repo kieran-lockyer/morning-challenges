@@ -15,14 +15,38 @@
 
 class CaesarCipher
   def initialize(shift)
-    #your code here
+    @shift = shift
   end
 
   def encode(string)
-    #your code here
+    result = ""
+    string.upcase.each_char do |char|
+      if char.ord > 90 or char.ord < 65
+        result += char
+      else
+        if char.ord + @shift <= 90
+          result += (char.ord + @shift).chr
+        else
+          result += (char.ord + @shift - 26).chr
+        end
+      end
+    end
+    return result
   end
   
   def decode(string)
-    #your code here
+    result = ""
+    string.upcase.each_char do |char|
+      if char.ord > 90 or char.ord < 65
+        result += char
+      else
+        if char.ord - @shift >= 65
+          result += (char.ord - @shift).chr
+        else
+          result += (char.ord - @shift + 26).chr
+        end
+      end
+    end
+    return result
   end
 end
