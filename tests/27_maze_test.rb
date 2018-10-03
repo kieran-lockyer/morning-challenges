@@ -1,3 +1,41 @@
+# Maze Runner
+
+# Introduction
+#      Welcome Adventurer. Your aim is to navigate the maze and reach the finish point without
+#      touching any walls. Doing so will kill you instantly!
+
+# Task
+#      You will be given a 2D array of the maze and an array of directions.
+#      Your task is to follow the directions given.
+#      If you reach the end point before all your moves have gone, you should return Finish.
+#      If you hit any walls or go outside the maze border, you should return Dead.
+#      If you find yourself still in the maze after using all the moves, you should return Lost.
+
+# The Maze array will look like
+
+# maze = [[1,1,1,1,1,1,1],
+#         [1,0,0,0,0,0,3],
+#         [1,0,1,0,1,0,1],
+#         [0,0,1,0,0,0,1],
+#         [1,0,1,0,1,0,1],
+#         [1,0,0,0,0,0,1],
+#         [1,2,1,0,1,0,1]]
+
+#         ..with the following key
+
+#         0 = Safe place to walk
+#         1 = Wall
+#         2 = Start Point
+#         3 = Finish Point
+
+# Rules
+#     1. The Maze array will always be square i.e. N x N
+#     2. The start and finish positions could be anywhere in the maze
+#     3. The directions array will always be in upper case and will be in the format of:
+#         N = North, E = East, W = West and S = South. (North is assumed to be the top)
+
+# Good luck, and stay safe!
+
 require 'test/unit'
 require_relative '../27_maze'
 
@@ -14,7 +52,7 @@ class TestMaze < Test::Unit::TestCase
             [1,2,1,0,1,0,1]
         ])    
     end
-    # If we reach number 3, we've finished the maze!
+    # If we reach number 3, we've finished the maze
     def test_finish
         assert_equal("Finish", @maze.walk(["N","N","N","N","N","E","E","E","E","E"]))
         assert_equal("Finish", @maze.walk(["N","N","N","N","N","E","E","S","S","E","E","N","N","E"]))
@@ -44,25 +82,9 @@ class TestMaze < Test::Unit::TestCase
         assert_equal("Lost", @maze.walk(["N","E","E","E","E"]))
         assert_equal("Lost", @maze.walk(["N","E","E","N"]))
     end
-    # Walls should block movement
-    def test_blocked_by_wall
-        # Will return "Dead" if wall DID NOT block as we'd fall off the edge 
-        assert_equal("Lost", @maze.walk(["N","W","W","E","E"]))
-        assert_equal("Finish", @maze.walk(["N","N","N","N","N","E","E","E","E","N","N","E"]))
-    end
-    # Check if we can move in a given direction from the current location
-    # i.e. there's no wall (represented by 1) in the way
-    def test_can_move
-        # Starting location
-        assert_true(@maze.can_move?("N"))
-        assert_true(@maze.can_move?("S"))
-        assert_false(@maze.can_move?("E"))
-        assert_false(@maze.can_move?("W"))
-        # Make a couple of moves and test again
-        @maze.walk(["N","E"])        
-        assert_true(@maze.can_move?("E"))
-        assert_true(@maze.can_move?("W"))
-        assert_false(@maze.can_move?("N"))
-        assert_false(@maze.can_move?("S"))
+    # Walls carry high voltage, so if we touch one, we're dead!
+    def test_hit_wall
+        assert_equal("Dead", @maze.walk(["N","W","W","E","E"]))
+        assert_equal("Dead", @maze.walk(["N","N","N","N","N","E","E","E","E","N","N","E"]))
     end
 end
