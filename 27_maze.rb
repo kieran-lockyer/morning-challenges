@@ -12,7 +12,7 @@ class Maze
         @maze = maze
         # Find the start location (element with value 2)
         # First find the row that includes the value 2
-        start_row = maze.detect{|row| row.include?(2)}
+        start_row = maze.find { |row| row.include?(2) }
         # Construct player position hash from column and row indexes
         @player_position = { col: start_row.index(2), row: maze.index(start_row) }
     end
