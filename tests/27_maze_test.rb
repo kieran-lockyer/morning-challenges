@@ -53,12 +53,7 @@ class TestMaze < Test::Unit::TestCase
         ])    
     end
     # If we reach number 3, we've finished the maze
-<<<<<<< HEAD
-    def test_finish
-        puts "Finish Test"
-=======
     def test_finish_route_1
->>>>>>> e3f9f4e73af2083c93337490ff8271225687f885
         assert_equal("Finish", @maze.walk(["N","N","N","N","N","E","E","E","E","E"]))
     end
     def test_finish_route_2
@@ -80,12 +75,7 @@ class TestMaze < Test::Unit::TestCase
         assert_equal("Finish", @maze.walk(["E","E","E","E","E"]))
     end
     # If we go off the edge of the maze, we're dead!
-<<<<<<< HEAD
-    def test_dead
-        puts "Dead Test"
-=======
     def test_dead_1
->>>>>>> e3f9f4e73af2083c93337490ff8271225687f885
         assert_equal("Dead", @maze.walk(["N","N","N","W","W"]))
     end
     def test_dead_2
@@ -97,24 +87,14 @@ class TestMaze < Test::Unit::TestCase
         assert_equal("Dead", @maze.walk(["N","N","N","W","W","E","E","N"]))
     end
     # If we didn't finish or die by the end of the walk, we're lost in the maze!
-<<<<<<< HEAD
-    def test_lost
-        puts "Lost Test"
-=======
     def test_lost_1
->>>>>>> e3f9f4e73af2083c93337490ff8271225687f885
         assert_equal("Lost", @maze.walk(["N","E","E","E","E"]))
     end
     def test_lost_2
         assert_equal("Lost", @maze.walk(["N","E","E","N"]))
     end
     # Walls carry high voltage, so if we touch one, we're dead!
-<<<<<<< HEAD
-    def test_hit_wall
-        puts "Hit Wall Test"
-=======
     def test_hit_wall_1
->>>>>>> e3f9f4e73af2083c93337490ff8271225687f885
         assert_equal("Dead", @maze.walk(["N","W","W","E","E"]))
     end
     def test_hit_wall_2
