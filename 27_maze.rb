@@ -13,27 +13,30 @@ class Maze
         # Find the start location (element with value 2)
         # First find the row that includes the value 2
         start_row = maze.detect{|row| row.include?(2)}
-        # Construct player position from column and row indexes
+        # Construct player position hash from column and row indexes
         @player_position = { col: start_row.index(2), row: maze.index(start_row) }
-        puts "Player start: #{@player_position.inspect}"
     end
     def walk(moves)
-        for move in moves
+        for move in moves do
+            # Convert move to symbol so we can use it to reference @@valid_moves
+            move = move.to_sym
             # Ignore invalid moves
             if @@valid_moves[move]
                 # Adjust the player position according to the direction moved
-                @player_position[:col] += @@valid_moves[move.to_s][:col]
-                @player_position[:row] += @@valid_moves[move.to_s][:row]
-                puts "Player: #{@player_position.inspect}"
+                @player_position[:col] += @@valid_moves[move][:col]
+                @player_position[:row] += @@valid_moves[move][:row]
                 # Get the value at the new location in the maze
+                # This will fail if we're outside the maze, triggering the rescue clause
                 value = @maze[@player_position[:row]][@player_position[:col]]
-                # Hit a wall or fell off the edge?
-                return 'Dead' if [1, nil].include?(value)
+                # Hit a wall?
+                return 'Dead' if value == 1
                 # Reached the exit?
-                return 'Finished' if value == 3
+                return 'Finish' if value == 3
             end
         end
         # If we didn't finish or die, then we're lost!
         'Lost'
+    rescue
+        'Dead'
     end
 end
