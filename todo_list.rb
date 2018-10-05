@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # For this challenge, your Todo List should be able to perform all actions
 # given in the test. Namely you should be able to:
 # 1. create a new todo list with a title and description
@@ -15,4 +16,7 @@ class TodoList
 end
 
 class TodoListItem
+=======
+class TodoList
+>>>>>>> 9f3e93771db9a54c980d032ae7930e3c218ad76f
 end
