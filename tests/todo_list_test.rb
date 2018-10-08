@@ -9,7 +9,7 @@ class TodoListTest < Test::Unit::TestCase
 
     # Can create a new todo list
     def test_create_todo_list
-        assert_equal(0,@todo_list.count)
+        assert_equal(1,@todo_list.count)
         assert_equal("My List",@todo_list.title)
     end
 
