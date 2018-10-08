@@ -36,12 +36,6 @@ class TodoListTest < Test::Unit::TestCase
         assert_equal(false, @todo_list.all_done?)
     end
 
-    # Can set all items done on list
-    def test_set_all_items_done
-        @todo_list.set_all_done
-        assert_equal(true, @todo_list.all_done?)
-    end
-
     # Can delete an item from a list
     def test_delete_todo_item
         @todo_list.delete_item("Get cat food")
