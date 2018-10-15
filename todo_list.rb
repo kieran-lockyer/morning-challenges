@@ -22,7 +22,7 @@ class TodoList
     end
 
     def add_item(item)
-        @list[item] = TodoListItem.new(item)
+        @list[item] = TodoListItem.new()
     end
 
     def delete_item(item)
@@ -38,13 +38,7 @@ class TodoList
     end
 
     def all_done?
-        all_items_done = true
-        for key, value in @list
-            if value.done? == false
-                all_items_done = false
-            end
-        end
-        return all_items_done
+        @list.values.map {|value| value.done?}.all?
     end
 
     def get_item(item)
@@ -53,10 +47,9 @@ class TodoList
 end
 
 class TodoListItem
-    attr_accessor :item, :done
+    attr_accessor :done
 
-    def initialize(item)
-        @item = item
+    def initialize()
         @done = false
     end
 
