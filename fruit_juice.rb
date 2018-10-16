@@ -22,17 +22,30 @@
 
 class Jug
     def initialize(capacity)
+        @capacity = capacity
+        @contents = {}
     end
 
     def add(amount, type)
+        if @contents.values.sum + amount <= @capacity
+            @contents[type] = amount.to_f
+        else
+            @contents[type] = (@capacity - @contents.values.sum).to_f
+        end
     end
 
     def pour(amount)
+        amount_to_deduct = amount / @contents.length
+        for type, amount in @contents
+            @contents[type] -= amount_to_deduct
+        end
     end
 
     def getTotalAmount
+        @contents.values.sum.to_f
     end
 
     def getConcentration(type)
+        @contents[type] ? @contents[type] / self.getTotalAmount : 0
     end
 end
