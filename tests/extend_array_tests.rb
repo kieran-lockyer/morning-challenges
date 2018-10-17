@@ -21,7 +21,7 @@ class ExtendArrayTests < Test::Unit::TestCase
         assert_equal([2,4], @array.even)
     end
     def test_odd
-        assert_equal([1,3,5], @array.even)
+        assert_equal([1,3,5], @array.odd)
     end    
     # Teardown is automatically executed after each test method
     def teardown
