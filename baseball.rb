@@ -27,14 +27,101 @@
 #
 class Baseball
     def initialize
+        # @away = {first: 0, second: 0, third: 0, home: 0, out: 0}
+        # @home = {first: 0, second: 0, third: 0, home: 0, out: 0}
+        @away = []
+        @away_out = 0
+        @away_on_field = 0
+        @home = []
+        @home_out = 0
+        @home_on_field = 0
+        @batting = @away
+        @batting_out = @away_out
+        @batting_on_field = @away_on_field
     end    
     # A public method accepting the result of an at-bat
     # @param {string} entry - The result of an at-bat 
     # Acceptable values: ('single', 'double', 'triple', 'homerun' or 'out') 
     def addEntry(entry)
+        @batting += 1
+        case entry
+        when 'single'
+            @batting.push((@batting_on_field) * 1)
+        when 'double'
+            @batting.push((@batting_on_field) * 2)
+        when 'triple'
+            @batting.
+        when 'homerun'
+        when 'out'
+        end
+        # case entry
+        # when 'single'
+        #     if @batting[:third] == 1
+        #         @batting[:home] += 1
+        #         @batting[:third] = 0
+        #     end
+        #     if @batting[:second] == 1
+        #         @batting[:third] = 1
+        #         @batting[:second] = 0
+        #     end
+        #     if @batting[:first] == 1
+        #         @batting[:second] = 1
+        #         @batting[:first] = 0
+        #     end
+        #     @batting[:first] = 1
+        # when 'double'
+        #     if @batting[:third] == 1
+        #         @batting[:home] += 1
+        #         @batting[:third] = 0
+        #     end
+        #     if @batting[:second] == 1
+        #         @batting[:home] += 1
+        #         @batting[:second] = 0
+        #     end
+        #     if @batting[:first] == 1
+        #         @batting[:third] = 1
+        #         @batting[:first] = 0
+        #     end
+        #     @batting[:second] = 1
+        # when 'triple'
+        #     if @batting[:third] == 1
+        #         @batting[:home] += 1
+        #         @batting[:third] = 0
+        #     end
+        #     if @batting[:second] == 1
+        #         @batting[:home] += 1
+        #         @batting[:second] = 0
+        #     end
+        #     if @batting[:first] == 1
+        #         @batting[:home] += 1
+        #         @batting[:first] = 0
+        #     end
+        #     @batting[:third] = 1
+        # when 'homerun'
+        #     if @batting[:third] == 1
+        #         @batting[:home] += 1
+        #         @batting[:third] = 0
+        #     end
+        #     if @batting[:second] == 1
+        #         @batting[:home] += 1
+        #         @batting[:second] = 0
+        #     end
+        #     if @batting[:first] == 1
+        #         @batting[:home] += 1
+        #         @batting[:first] = 0
+        #     end
+        #     @batting[:home] += 1
+        # when 'out'
+        #     @batting[:out] += 1
+        # end
+        # if @batting[:out] == 3
+        #     @batting = @home
+        # end
+
     end
     # A public method returning the current score
     # Format: "Home: [HOME_SCORE] Away: [AWAY_SCORE]"
     def to_s
+        "Home: #{@home[:home]} Away: #{@away[:home]}"
     end
 end
