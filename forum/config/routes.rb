@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # Go to home/index by default
+  root 'home#index'
+  # About page
+  get '/about' => 'home#about'
+
+  post '/questions' => 'home#temp'
+  post '/answers' => 'home#temp'
+
+  get '/questions/:id' => 'home#question'
 end
