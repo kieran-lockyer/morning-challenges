@@ -24,6 +24,8 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.json
   def create
+    question = Question.find(params[:id])
+    
     @answer = Answer.new(answer_params)
 
     respond_to do |format|
@@ -69,6 +71,6 @@ class AnswersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
-      params.require(:answer).permit(:email, :body)
+      params.require(:answer).permit(:email, :body, :question_id)
     end
 end
