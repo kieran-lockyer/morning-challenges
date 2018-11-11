@@ -1,0 +1,1 @@
+Complete the different challenges and check your work by typing into your terminal 'mocha coolstrings.js'.
