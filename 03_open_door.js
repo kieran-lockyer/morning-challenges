@@ -6,21 +6,40 @@ Test your solution:
 mocha 03_open_door.js
 */
 
-function openDoor (name, hasCoffee) {
-// Your code here
-// Google JS syntax ;)
+function openDoor(input) {
+    // Your code here
+
+}
+
+function makeItem(name, hasCoffee) {
+    item = new Object()
+    item.name = name
+    item.hasCoffee = hasCoffee
+    return item
 }
 
 var assert = require('assert');
 
-describe('openDoor', function() {
-    it('should return true if "Simon" and hasCoffee', function() {
-        assert.equal(true, openDoor("Simon",true));
-    });
-    it('should return false if !"Simon" and hasCoffee', function() {
-        assert.equal(false, openDoor("Scott",true));
-    });
-    it('should return false if "Simon" and !hasCoffee', function() {
-        assert.equal(false, openDoor("Simon",false));
-    });
-});
+describe('openDoor', function () {
+    let hash = [];
+    it('should return true if "Simon" and hasCoffee with single object', function () {
+        hash.push(makeItem('Simon', true))
+        assert.equal(true, openDoor(hash))
+    })
+    it('should return true if "Simon" and hasCoffee with multiple objects', function () {
+        hash.push(makeItem('Simon', true))
+        hash.push(makeItem('Scott', true))
+        assert.equal(true, openDoor(hash))
+    })
+    it('should return false if !"Simon" and hasCoffee', function () {
+        hash.push(makeItem('Scott', true))
+        assert.equal(false, openDoor(hash))
+    })
+    it('should return false if "Simon" and !hasCoffee', function () {
+        hash.push(makeItem('Simon', false))
+        assert.equal(false, openDoor(hash))
+    })
+    it('should return false if empty array passed', function () {
+        assert.equal(false, openDoor(hash))
+    })
+})
