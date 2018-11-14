@@ -3,26 +3,9 @@
 // Test your solution:
 // mocha 05_sum_numbers.js
 
-function sumScores(scores) {
-    let sum = 0
-    for (score of scores) {
-        sum += score
-    }
-    return score
-}
-
 function findWinner(players) {
     // Your code here
-    let winner = ''
-    let highestTotal = 0
 
-    for (player of players) {
-        let totalScore = sumScores(player.scores)
-        if (totalScore > highestTotal) {
-            winner = player.name
-        }
-    }
-    return winner
 }
 
 
