@@ -5,7 +5,7 @@ When the array has an even number of values the midpoint index will be rounded u
 
 Example:
     binaryArray = [1,5,8,12,20,21,35]
-    searchValue = 3
+    searchValue = 8
 
     In this case the index returned would be 2 and it should take 3 steps. 
     In the first step, 3 is the midpoint index (value = 12). 
