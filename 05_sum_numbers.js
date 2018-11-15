@@ -2,10 +2,21 @@
 // and return the name of the player with the highest total score.
 // Test your solution:
 // mocha 05_sum_numbers.js
+function add(a, b) {
+    return a + b;
+}
 
 function findWinner(players) {
-    // Your code here
-
+    let highest = 0
+    let name = ''
+    for (let player of players) {
+        let total = player.scores.reduce(add, 0)
+        if (total > highest) {
+            highest = total
+            name = player.name
+        }
+    }
+    return name
 }
 
 
