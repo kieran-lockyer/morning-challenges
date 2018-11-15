@@ -1,10 +1,12 @@
 /*
 Write a method which will act as a binary search which will find the 
-position and the actual number of steps required to find the position. 
-When the array has an even number of values the midpoint index will be rounded up.
+position of a number in a sorted array and the number of steps required 
+to find the position. 
+When the array has an even number of values, the midpoint index should 
+be rounded up.
 
 Example:
-    binaryArray = [1,5,8,12,20,21,35]
+    sortedArray = [1,5,8,12,20,21,35]
     searchValue = 8
 
     In this case the index returned would be 2 and it should take 3 steps. 
@@ -14,7 +16,7 @@ Example:
 
 */
 
-function binarySearch(binaryArray, searchValue) {
+function binarySearch(sortedArray, searchValue) {
     // Your code here
 }
 
@@ -31,7 +33,7 @@ describe('Count loops', function () {
     it('Should count length divided by two steps when value is at beginning', function () {
         assert.deepEqual([0, 3], binarySearch([1, 3, 7, 10, 14, 19, 31], 1))
     })
-    it('Should count length divided by two steps when value is at end', function () {
+    it('Should count half the array length when value is at an end', function () {
         assert.deepEqual([6, 3], binarySearch([1, 3, 7, 10, 14, 19, 31], 31))
     })
 })
