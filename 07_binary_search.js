@@ -21,14 +21,17 @@ function binarySearch(binaryArray, searchValue) {
 
 let assert = require('assert')
 
-describe('Count loops', function() {
-    it('Should count one step when search values is in the middle', function() {
-        assert.equal([3,1],binarySearch([1,3,7,10,14,19,31],10))
-        assert.equal([1,1],binarySearch([1,3,7],3))
-        assert.equal([0,1],binarySearch([1]),1)
-    });
-    it('Should count length divided by two steps when value is on end', function() {
-        assert.equal([0,4],binarySearch([1,3,7,10,14,19,31],1))
-        assert.equal([6,3],binarySearch([1,3,7,10,14,19,31],31))
-    });
+describe('Count loops', function () {
+    it('Should count one step when search values is in the middle', function () {
+        assert.deepEqual([3, 1], binarySearch([1, 3, 7, 10, 14, 19, 31], 10))
+    })
+    it('Should count one step when search value is only value', function () {
+        assert.deepEqual([0, 1], binarySearch([1], 1))
+    })
+    it('Should count length divided by two steps when value is at beginning', function () {
+        assert.deepEqual([0, 3], binarySearch([1, 3, 7, 10, 14, 19, 31], 1))
+    })
+    it('Should count length divided by two steps when value is at end', function () {
+        assert.deepEqual([6, 3], binarySearch([1, 3, 7, 10, 14, 19, 31], 31))
+    })
 })
