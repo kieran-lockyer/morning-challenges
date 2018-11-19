@@ -17,8 +17,38 @@ Example:
 */
 
 function binarySearch(sortedArray, searchValue) {
-    // Your code here
+    let count = 0
+    let start = 0
+    let end = sortedArray.length
+    let mid = Math.floor((start + end) / 2)
+    for (let x = 0; x <= sortedArray.length / 2; x++) {
+        count += 1
+        if (sortedArray[mid] === searchValue) {
+            return [mid, count]
+        } else if (sortedArray[mid] < searchValue) {
+            start = mid
+            mid = Math.floor((start + end) / 2)
+        } else {
+            end = mid
+            mid = Math.floor((start + end) / 2)
+        }
+    }
+    return ('Not found')
 }
+
+// function binarySearch(sortedArray, searchValue, start = 0, end = sortedArray.length - 1) {
+//     let mid = Math.floor((start + end) / 2)
+//     if (sortedArray[mid] === searchValue) {
+//         console.log(mid)
+//         return mid
+//     } else if (sortedArray[mid] < searchValue) {
+//         console.log(mid)
+//         return binarySearch(sortedArray, searchValue, mid, end)
+//     } else {
+//         console.log(mid)
+//         return binarySearch(sortedArray, searchValue, start, mid)
+//     }
+// }
 
 
 let assert = require('assert')
@@ -35,5 +65,11 @@ describe('Count loops', function () {
     })
     it('Should count half the array length when value is at an end', function () {
         assert.deepEqual([6, 3], binarySearch([1, 3, 7, 10, 14, 19, 31], 31))
+    })
+    it('Test for not end and not middle', function () {
+        assert.deepEqual([5, 2], binarySearch([1, 3, 7, 10, 14, 19, 31], 19))
+    })
+    it('Should return "Not found" if searchValue is not in the array', function () {
+        assert.equal('Not found', binarySearch([1, 3, 7, 10, 14, 19, 31], 41))
     })
 })
