@@ -13,31 +13,53 @@
  -->
 <!doctype html>
 <html>
-  <head>
-    <title>Welcome</title>
 
-    <style>
+<head>
+  <title>Welcome</title>
+
+  <style>
     body {
       text-align: center;
     }
+
+    input {
+      padding: 20px;
+      margin: 50px;
+    }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <p><input type="text" placeholder="Enter your name"></p>
+  <p><input id='first' type="text" placeholder="Enter your first name"></p>
+  <p><input id='last' type="text" placeholder="Enter your last name"></p>
 
-    <h1></h1>
+  <h1></h1>
 
-  </body>
+</body>
 
-  <script>
-  const name = document.querySelector('input')
+<script>
+  let fname = document.querySelector('#first')
+  let lname = document.querySelector('#last')
   const welcomeMessage = document.querySelector('h1')
-  name.onkeyup = function () {
+  fname.onkeyup = function () {
     // hint: name.value gives you the current text in the input box
-    welcomeMessage.textContent = `Welcome, ${name.value}!`;
+    if (fname.value === '' && lname.value === '') {
+      welcomeMessage.style.display = 'none'
+    } else {
+      welcomeMessage.style.display = 'block'
+      welcomeMessage.textContent = `Welcome, ${fname.value.toUpperCase()} ${lname.value.toUpperCase()}!`;
+    }
   }
-  </script>
+  lname.onkeyup = function () {
+    // hint: name.value gives you the current text in the input box
+    if (fname.value === '' && lname.value === '') {
+      welcomeMessage.style.display = 'none'
+    } else {
+      welcomeMessage.style.display = 'block'
+      welcomeMessage.textContent = `Welcome, ${fname.value.toUpperCase()} ${lname.value.toUpperCase()}!`;
+    }
+  }
+</script>
 
 </html>
