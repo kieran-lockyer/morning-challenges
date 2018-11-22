@@ -8,33 +8,33 @@ If the input array is empty consider it as: [0] (array with a zero).
 */
 
 function oddOrEven(array) {
-    //enter code here
+    return array.reduce((a, b) => a + b, 0) % 2 === 0 ? 'even' : 'odd'
 }
 
 var assert = require('assert');
 
-describe('oddOrEven', function() {
-    it('Should "odd" or "even" depending on the number', function() {
+describe('oddOrEven', function () {
+    it('Should "odd" or "even" depending on the number', function () {
         assert.equal(oddOrEven([0]), 'even');
         assert.equal(oddOrEven([1]), 'odd')
         assert.equal(oddOrEven([]), 'even')
     });
-    it('Even tests', function() {
+    it('Even tests', function () {
         assert.equal(oddOrEven([0, 1, 5]), 'even')
         assert.equal(oddOrEven([0, 1, 3]), 'even')
         assert.equal(oddOrEven([1023, 1, 2]), 'even')
     });
-    it('Negative Even tests', function() {
+    it('Negative Even tests', function () {
         assert.equal(oddOrEven([0, -1, -5]), 'even')
         assert.equal(oddOrEven([0, -1, -3]), 'even')
         assert.equal(oddOrEven([-1023, 1, -2]), 'even')
     });
-    it('Odd tests', function() {
+    it('Odd tests', function () {
         assert.equal(oddOrEven([0, 1, 2]), 'odd')
         assert.equal(oddOrEven([0, 1, 4]), 'odd')
         assert.equal(oddOrEven([1023, 1, 3]), 'odd')
     });
-    it('Negative Odd tests', function() {
+    it('Negative Odd tests', function () {
         assert.equal(oddOrEven([0, -1, 2]), 'odd')
         assert.equal(oddOrEven([0, 1, -4]), 'odd')
         assert.equal(oddOrEven([-1023, -1, 3]), 'odd')
