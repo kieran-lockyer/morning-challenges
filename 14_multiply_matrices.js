@@ -17,18 +17,49 @@ Try drawing the function out first if the arrays are a little confusing.
 */
 
 function multiplyMatrices(matrixOne, matrixTwo) {
-    // Your code here    
+    let result = []
+    for (let b = 0; b <= matrixOne.length; b++) {
+        result.push(
+            matrixOne[b].map(
+                (x, a) => x * matrixTwo[a][b]
+            ).reduce((i, j) => i + j)
+        )
+    }
+    console.log(result)
+    return result
 }
 
 
-const assert = require ('assert');
+const assert = require('assert');
 
 describe('Matrix multiplication', function () {
     it('Should return the multipilcation of a matrix', function () {
-        assert.deepEqual([[58,64], [139,154]], multiplyMatrices([[1,2,3],[4,5,6]], [[7,8],[9,10],[11,12]]))
+        assert.deepEqual([
+            [58, 64],
+            [139, 154]
+        ], multiplyMatrices([
+            [1, 2, 3],
+            [4, 5, 6]
+        ], [
+            [7, 8],
+            [9, 10],
+            [11, 12]
+        ]))
     })
-    it('Should return null if the matrix cannot be multiplied', function() {
-        assert.deepEqual(null, multiplyMatrices( [[8,12,5], [40,21,8,17]], [[3,2,1,6], [7,4,1,9]]))
-        assert.deepEqual(null, multiplyMatrices( [[8,12,5], [40,21,8]], [[3,2,1], [7,4,1]]))
+    it('Should return null if the matrix cannot be multiplied', function () {
+        assert.deepEqual(null, multiplyMatrices([
+            [8, 12, 5],
+            [40, 21, 8, 17]
+        ], [
+            [3, 2, 1, 6],
+            [7, 4, 1, 9]
+        ]))
+        assert.deepEqual(null, multiplyMatrices([
+            [8, 12, 5],
+            [40, 21, 8]
+        ], [
+            [3, 2, 1],
+            [7, 4, 1]
+        ]))
     })
 })
