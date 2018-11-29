@@ -9,23 +9,11 @@ mocha 02_largest_number.js
 */
 
 function largestNumber(arr) {
-    let largest
-    for (let num in arr) {
-        if (largest) {
-            if (arr[num] != NaN && arr[num] > largest) {
-                largest = arr[num]
-            }
-        } else {
-            if (arr[num] != NaN) {
-                largest = arr[num]
-            }
-        }
+    let largest = Number.NEGATIVE_INFINITY;
+    for (let num of arr) {
+        if (num != NaN && num > largest) largest = num;
     }
-    if (largest) {
-        return largest
-    } else {
-        return null
-    }
+    return largest === Number.NEGATIVE_INFINITY ? null : largest;
 }
 
 var assert = require('assert');

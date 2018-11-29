@@ -39,6 +39,7 @@ It may help to write out the array beforehand if the examples are confusing.
 // }
 
 function matrixAddition(matrixOne, matrixTwo) {
+    // please don't judge, was doing this just for giggles.
     return Array.isArray(matrixOne[0]) ? matrixOne.map(a => a.length).reduce((x, y) => x + y) == matrixTwo.map(a => a.length).reduce((x, y) => x + y) ? matrixOne.map((x, y) => x.map((a, b) => a + matrixTwo[y][b])) : null : matrixOne.length !== matrixTwo.length ? null : matrixOne.map((a, b) => a + matrixTwo[b])
 }
 
