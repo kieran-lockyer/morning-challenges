@@ -50,7 +50,7 @@ const problem = {
   },
   D: {
     E: 4,
-    F: 9
+    F: 7
   },
   E: {
     F: 4
@@ -58,10 +58,80 @@ const problem = {
   F: {}
 };
 
-const dijkstra = (graph, start, end) => {
-  // Your code here
-};
+function setup(graph, start) {
+  let nodes = Object.keys(graph)
+  for (let node of nodes) {
+    if (node == start) {
+      graph[node].score = [0, start]
+    } else {
+      graph[node].score = [Infinity, '']
+    }
+  }
+  return graph
+}
 
+function setValues(graph) {
+  let nodes = Object.keys(graph)
+  for (let a of nodes) {
+    for (let b of Object.keys(graph[a])) {
+      if (b !== 'score') {
+        if (graph[b].score[0] > graph[a][b] + graph[a].score[0]) {
+          graph[b].score[0] = graph[a][b] + graph[a].score[0]
+          graph[b].score[1] = a
+        }
+      }
+    }
+  }
+  return graph
+}
+
+function condenseRoute(graph, start, end) {
+  let result = {}
+  result.distance = graph[end].score[0]
+  result.path = []
+  let currentNode = end
+  let pathExists = true
+  while (pathExists) {
+    result.path.push(currentNode)
+    currentNode = graph[currentNode].score[1]
+    if (currentNode === start) {
+      if (result.path.includes(currentNode)) {
+        return result
+      } else {
+        result.path.push(currentNode)
+        result.path.reverse()
+        return result
+      }
+    }
+  }
+}
+
+function validPath(graph, start, end) {
+  let canReach = [start]
+  for (let node of canReach) {
+    if (node !== 'score') {
+      for (let subNode of Object.keys(graph[node])) {
+        canReach.push(subNode)
+      }
+    }
+  }
+  if (canReach.includes(end)) {
+    return true
+  }
+  return false
+}
+
+const dijkstra = (graph, start, end) => {
+  if (validPath(graph, start, end)) {
+    let values = setValues(setup(graph, start))
+    return condenseRoute(values, start, end)
+  } else {
+    return {
+      distance: Infinity,
+      path: []
+    }
+  }
+}
 
 var assert = require('assert');
 
@@ -69,19 +139,17 @@ describe('Find shortest path', function () {
   context('When there is a valid path and start is different from end', function () {
     it('Should return the distance 11 from A to F with path A,B,D,E,F', function () {
       assert.deepEqual({
-        distance: 11,
-        path: ['A', 'B', 'D', 'E', 'F']
+        distance: 10,
+        path: ['A', 'B', 'D', 'F']
       }, dijkstra(problem, 'A', 'F'))
     })
     it('Should return the distance 9 from B to F with path B,D,E,F', function () {
       assert.deepEqual({
-        distance: 9,
-        path: ['B', 'D', 'E', 'F']
+        distance: 8,
+        path: ['B', 'D', 'F']
       }, dijkstra(problem, 'B', 'F'))
     })
-
   })
-
   context('When there is no path between the start and end', function () {
     it('Should return the distance Infinity if there is no path', function () {
       assert.deepEqual({
