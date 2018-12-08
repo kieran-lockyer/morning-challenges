@@ -31,7 +31,7 @@ describe('Pangram Challenge', function () {
     it('The phrase "alright alright alright" should return false', function () {
         assert.equal(isPangram('alright alright alright'), false)
     })
-    it('Should return false if numbers are included', function () {
+    it('Should return false if numbers are included in place of letters', function () {
         assert.equal(isPangram('abcdefghijk1mn0pqrstuvwxyz'), false)
     })
     it('Should return false if only numbers are included', function () {
