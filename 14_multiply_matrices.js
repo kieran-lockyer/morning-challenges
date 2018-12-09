@@ -16,17 +16,27 @@ Hint:
 Try drawing the function out first if the arrays are a little confusing.
 */
 
-function multiplyMatrices(matrixOne, matrixTwo) {
-    let result = []
-    for (let b = 0; b <= matrixOne.length; b++) {
-        result.push(
-            matrixOne[b].map(
-                (x, a) => x * matrixTwo[a][b]
-            ).reduce((i, j) => i + j)
-        )
+function transposeMatrix(matrix) {
+    result = []
+    for (let col = 0; col < matrixTwo[0].length; col++) {
+        subArray = []
+        for (let row = 0; row < matrixTwo.length; row++) {
+            subArray.push(matrixTwo[row][col])
+        }
+        result.push(subArray)
     }
-    console.log(result)
     return result
+}
+
+function multiplyMatrices(matrixOne, matrixTwo) {
+    matrixTwo = transposeMatrix(matrixTwo)
+    for (let a of matrixOne) {
+        product = 0
+        for (let b in matrixTwo) {
+            console.log(a, b)
+            console.log(b, a)
+        }
+    }
 }
 
 
