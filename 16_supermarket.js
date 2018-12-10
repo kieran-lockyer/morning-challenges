@@ -29,9 +29,21 @@ the last customer at till2 is served.
 Check your solutions with mocha 16_supermarket.js
 */
 
+// function queueTime(customers, n) {
+//     let store = Array(n).fill(0)
+//     for (let customer of customers) {
+//         store[store.indexOf(store.reduce((a, b) => a < b ? a : b))] += customer
+//     }
+//     return store.reduce((a, b) => a > b ? a : b)
+// }
+
 function queueTime(customers, n) {
-    // Your code here
-};
+    let store = Array(n).fill(0)
+    for (let customer of customers) {
+        store.sort((a, b) => a - b)[0] += customer
+    }
+    return store.sort((a, b) => b - a)[0]
+}
 
 const assert = require('assert');
 
