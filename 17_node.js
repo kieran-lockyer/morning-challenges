@@ -27,6 +27,11 @@ const requestHandler = (request, response) => {
 
   console.log('Woop, new request!', request.method, request.url);
 
+  if (request.url === '/') {
+    response.setHeader('Content-Type', 'text/html')
+    response.end('<h1>poop</h1>')
+  }
+
   if (request.url === '/hello') {
     response.end('world')
   }
