@@ -24,19 +24,20 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-let books = [
-  {
+let books = [{
     id: 0,
-    title: 'Eloquent JavaScript 2nd Edition'
+    title: 'Eloquent JavaScript 2nd Edition',
+    year: 1982
   },
   {
     id: 1,
-    title: 'JavaScript: The Good Parts'
+    title: 'JavaScript: The Good Parts',
+    year: 1984
   }
 ];
 
 app.get("/", (req, res) => {
-  res.send(200);
+  res.sendStatus(200);
 });
 
 app.get("/books", (req, res) => {
