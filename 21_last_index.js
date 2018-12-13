@@ -2,6 +2,11 @@
 Find Last Index
 Iterate through an array in reverse, returning the index closest
 to the end where the predicate truth test passes.
+
+Try adding some tests.
+One example could be what if the object is not found in the array
+at all.
+
 Example:
 const users = [{'id': 1, 'name': 'Bob', 'last': 'Brown'},
              {'id': 2, 'name': 'Ted', 'last': 'White'},
