@@ -17,7 +17,7 @@ const days = [
     "tenth",
     "eleventh",
     "twelfth"
-];
+]
 
 const gifts = [
     "And a partridge in a pear tree.\n",
@@ -32,16 +32,13 @@ const gifts = [
     "Ten lords a-leaping",
     "Eleven pipers piping",
     "Twelve drummers drumming"    
-];
+]
 
 function twelveDaysOfChristmas() {
 // Your code here
 }
 
-twelveDaysOfChristmas()
-
-
-const assert = require('chai').assert;
+const assert = require('chai').assert
 
 describe('Twelve days of Christmas challenge', function() {
 
