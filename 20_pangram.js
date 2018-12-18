@@ -13,6 +13,7 @@ If the given string has any uppercase or numbers, it should return false
 */
 
 function isPangram(string) {
+<<<<<<< HEAD
     // return string.match(/([a-z].?){26,}/i) ? true : false
     // for (let letter of 'abcdefghijklmnopqrstuvwxyz') {
     //     if (!string.toLowerCase().includes(letter)) return false 
@@ -22,6 +23,9 @@ function isPangram(string) {
     // string = [...new Set(string)]
     // return string.length === 26 ? true : false
     return [...new Set(string.replace(/[^a-z]/gi, ''))].length === 26
+=======
+    //Your code here
+>>>>>>> d5bf5d77549b03a1f0c24803ebf53b7350287111
 }
 
 const assert = require('assert');
@@ -36,12 +40,15 @@ describe('Pangram Challenge', function () {
     it('The phrase "take the dog for a walk" should return false', function () {
         assert.equal(isPangram('take the dog for a walk'), false)
     })
+<<<<<<< HEAD
     it('The phrase "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" should return false', function () {
         assert.equal(isPangram('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'), false)
     })
     it('The phrase "a0b1c2d3e4f5g6h7i8j9klmnopqrstuvwxyz" should return true', function () {
         assert.equal(isPangram('a0b1c2d3e4f5g6h7i8j9klmnopqrstuvwxyz'), true)
     })
+=======
+>>>>>>> d5bf5d77549b03a1f0c24803ebf53b7350287111
     it('The phrase "alright alright alright" should return false', function () {
         assert.equal(isPangram('alright alright alright'), false)
     })
