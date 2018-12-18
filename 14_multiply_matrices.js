@@ -17,14 +17,9 @@ Try drawing the function out first if the arrays are a little confusing.
 */
 
 function multiplyMatrices(matrixOne, matrixTwo) {
-    for (let row of matrixOne) {
-        if (row.length != matrixTwo.length) return null
-    }
-    for (let row of matrixTwo) {
-        if (row.length != matrixOne.length) return null
-    }
     let res = []
     for (let r = 0; r < matrixOne.length; r++) {
+        if (matrixOne[r].length != matrixTwo.length || matrixTwo[r].length != matrixOne.length) return null
         let resRow = []
         for (let c = 0; c < matrixTwo[0].length; c++) {
             let prod = 0
