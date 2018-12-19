@@ -13,10 +13,14 @@ function conwaysGameOfLife(twoDimensionalArray) {
     // Do something
 }
 
+function* nthGen(int, game) {
+    // BEAST MODE
+}
+
 let assert = require('assert')
 
 describe("Conway's Game Of Life", function () {
-    context("Testing a Finite Game", function () {
+    context("Testing One Generation", function () {
         it("Should correctly return the next generation of the game", function () {
             let game = [
                 [0, 0, 0, 0, 0],
@@ -33,5 +37,59 @@ describe("Conway's Game Of Life", function () {
                 [0, 0, 0, 1, 0]
             ])
         })
+    })
+    context("BEAST MODE!!!! Testing n generations", function () {
+        let game = [
+            [0, 0, 0, 0, 0],
+            [0, 0, 1, 1, 0],
+            [0, 1, 1, 0, 0],
+            [0, 0, 1, 0, 1],
+            [0, 0, 1, 0, 0]
+        ]
+        let answers = [
+            [
+                [0, 0, 0, 0, 0],
+                [0, 1, 1, 1, 0],
+                [0, 1, 0, 0, 0],
+                [0, 0, 1, 0, 0],
+                [0, 0, 0, 1, 0]
+            ],
+            [
+                [0, 0, 1, 0, 0],
+                [0, 1, 1, 0, 0],
+                [0, 1, 0, 1, 0],
+                [0, 0, 1, 0, 0],
+                [0, 0, 0, 0, 0]
+            ],
+            [
+                [0, 1, 1, 0, 0],
+                [0, 1, 0, 1, 0],
+                [0, 1, 0, 1, 0],
+                [0, 0, 1, 0, 0],
+                [0, 0, 0, 0, 0]
+            ],
+            [
+                [0, 1, 1, 0, 0],
+                [1, 1, 0, 1, 0],
+                [0, 1, 0, 1, 0],
+                [0, 0, 1, 0, 0],
+                [0, 0, 0, 0, 0]
+            ],
+            [
+                [1, 1, 1, 0, 0],
+                [1, 0, 0, 1, 0],
+                [1, 1, 0, 1, 0],
+                [0, 0, 1, 0, 0],
+                [0, 0, 0, 0, 0]
+            ]
+
+        ]
+        let n = 0
+        for (let gen of nthGen(5, game)) {
+            it("Should correctly return the next generation of the game", function () {
+                assert.deepEqual(gen, answers[n])
+                n += 1
+            })
+        }
     })
 })
