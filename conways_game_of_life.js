@@ -70,10 +70,10 @@ function conwaysGameOfLife(game) {
     return nextGen
 }
 
-function* nthGen(int, game) {
+function* nthGen(game) {
     let nextGen = game
     let currentGen
-    for (let gen = 0; gen < int; gen++) {
+    while (true) {
         currentGen = nextGen
         nextGen = conwaysGameOfLife(currentGen)
         yield nextGen
@@ -147,11 +147,10 @@ describe("Conway's Game Of Life", function () {
             ]
 
         ]
-        let n = 0
-        for (let gen of nthGen(5, game)) {
+        let generatorObject = nthGen(game)
+        for (let gen = 0; gen < 5; gen++) {
             it("Should correctly return the next generation of the game", function () {
-                assert.deepEqual(gen, answers[n])
-                n += 1
+                assert.deepEqual(generatorObject.next().value, answers[gen])
             })
         }
     })
