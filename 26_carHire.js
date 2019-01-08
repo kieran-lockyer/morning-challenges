@@ -22,10 +22,8 @@
 */
 
 const rentalCarCost = (d) => {
-    // Your code here!
+    return d >= 3 ? d >= 7 ? (d * 40) - 50 : (d * 40) - 20 : d * 40
 }
-
-
 
 const assert = require('assert')
 
