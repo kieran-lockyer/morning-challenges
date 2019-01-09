@@ -10,15 +10,15 @@ commonCharacters("Alright alright alright", "") => ""
 
 */
 
-const commonCharacters = (string1, string2) => {
-    //    Your code here
-
+const commonCharacters = (...args) => {
+    args = args.map(string => [...new Set(string)])
+    return args[0].filter((char) => char != ' ' && args[1].includes(char)).join('')
 }
 
 // Your Code Should Pass:
 const chai = require('chai');
 const should = chai.should();
-    
+
 describe('Common Characters', () => {
     it('returns commons characters', () => {
         commonCharacters('abc', 'abc').should.equal('abc')
