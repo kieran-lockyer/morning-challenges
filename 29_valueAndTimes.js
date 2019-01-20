@@ -14,17 +14,17 @@ If your feeling confident add more tests below.
 */
 
 const valueAndTimes = (value, times) => {
-    // return times.toString().match(/[0-9]/) ? value.toString().match(/[a-z]/) ? value.repeat(times) : value * times : null
+    return times.toString().match(/[0-9]/) ? value.toString().match(/[a-z]/) ? value.repeat(times) : value * times : null
 
-    if (times.toString().match(/[0-9]/)) {
-        if (value.toString().match(/[a-z]/gi)) {
-            return value.repeat(times)
-        } else {
-            return value * times
-        }
-    } else {
-        return null
-    }
+    // if (times.toString().match(/[0-9]/)) {
+    //     if (value.toString().match(/[a-z]/gi)) {
+    //         return value.repeat(times)
+    //     } else {
+    //         return value * times
+    //     }
+    // } else {
+    //     return null
+    // }
 }
 
 let assert = require('assert')

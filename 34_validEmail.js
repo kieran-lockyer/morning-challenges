@@ -24,9 +24,8 @@ Try adding your tests after finding a solution.
 */
 
 const validEmail = (email) => {
-    // Your code here
+    return /^([\w\d\.]+)@([\w]+\.)+\w{2,3}$/.test(email)
 }
-
 
 let assert = require('assert')
 
@@ -43,10 +42,14 @@ describe("Valid Email", () => {
     it("Should identify emails with a . but without a .tld as invalid", () => {
         assert.equal(validEmail('hello.gmail@com'), false)
     })
-    it("Should identify black emails as invalid", () => {
+    it("Should identify blank emails as invalid", () => {
         assert.equal(validEmail(''), false)
     })
     it("Should identify valid emails", () => {
         assert.equal(validEmail('steve@gmail.com'), true)
+        assert.equal(validEmail('steve78@gmail.com'), true)
+        assert.equal(validEmail('steve.miller@gmail.com'), true)
+        assert.equal(validEmail('steve.miller@qut.edu.au'), true)
+        assert.equal(validEmail('steve.miller.78@gmail.com'), true)
     })
 })
